@@ -1,0 +1,411 @@
+{
+ "version": "1.0",
+ "exportedAt": "2026-11-18",
+ "workflow": {
+  "id": "texas-file-prereview",
+  "name": "Texas file pre-review",
+  "description": "Pre-reviews a Texas resale file before compliance review: checks required documents and addenda, matches the tax record, and routes to ready for broker review, compliance hold, or escalate to broker."
+ },
+ "state": {
+  "blocks": {
+   "b2506997-acbd-5a97-9365-ef7afb01a80a": {
+    "id": "b2506997-acbd-5a97-9365-ef7afb01a80a",
+    "type": "response",
+    "name": "Escalate to broker",
+    "position": {
+     "x": 1140,
+     "y": 480
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "data": {
+      "id": "data",
+      "type": "code",
+      "value": "{\n  \"file_id\": \"<texaschecklist.result.file_id>\",\n  \"outcome\": \"escalate_to_broker\",\n  \"issues\": <texaschecklist.result.issues>,\n  \"summary\": \"<texaschecklist.result.summary>\"\n}"
+     },
+     "status": {
+      "id": "status",
+      "type": "short-input",
+      "value": "200"
+     },
+     "dataMode": {
+      "id": "dataMode",
+      "type": "dropdown",
+      "value": "json"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "27510e2d-64ec-57cf-a1e5-fe260e80c1d0": {
+    "id": "27510e2d-64ec-57cf-a1e5-fe260e80c1d0",
+    "type": "agent",
+    "name": "Draft hold note",
+    "position": {
+     "x": 1520,
+     "y": 140
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "model": {
+      "id": "model",
+      "type": "combobox",
+      "value": "claude-sonnet-4-5"
+     },
+     "apiKey": {
+      "id": "apiKey",
+      "type": "short-input",
+      "value": "{{ANTHROPIC_API_KEY}}"
+     },
+     "messages": {
+      "id": "messages",
+      "type": "messages-input",
+      "value": [
+       {
+        "role": "system",
+        "content": "You are a compliance assistant for a Texas real estate brokerage. Write the Compliance Hold note that goes to the agent and transaction coordinator. Use only the issues given; never add requirements. For each issue, say in one plain sentence what is missing or wrong and exactly what to upload or correct. Keep it under 120 words, friendly and direct. Do not give legal advice and do not approve or reject the transaction."
+       },
+       {
+        "role": "user",
+        "content": "File: <texaschecklist.result.file_id>\nSummary: <texaschecklist.result.summary>\nIssues (JSON): <texaschecklist.result.issues>"
+       }
+      ]
+     },
+     "temperature": {
+      "id": "temperature",
+      "type": "slider",
+      "value": 0.2
+     }
+    },
+    "outputs": {},
+    "data": {
+     "canonicalModes": {
+      "files": "basic",
+      "vertexCredential": "basic",
+      "bedrockCredential": "basic"
+     }
+    },
+    "locked": false
+   },
+   "c7811ec9-823e-59b8-98e1-e4c329a10d4c": {
+    "id": "c7811ec9-823e-59b8-98e1-e4c329a10d4c",
+    "type": "start_trigger",
+    "name": "Start",
+    "position": {
+     "x": 0,
+     "y": 200
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "inputFormat": {
+      "id": "inputFormat",
+      "type": "input-format",
+      "value": [
+       {
+        "id": "1ad3f3c0-9cb2-5c84-af88-2d665b678a62",
+        "name": "file",
+        "type": "object",
+        "value": "",
+        "collapsed": false
+       },
+       {
+        "id": "0456a3fe-72fa-5da7-adee-f0a69e9a4158",
+        "name": "draft_note",
+        "type": "boolean",
+        "value": "",
+        "collapsed": false
+       }
+      ]
+     },
+     "runMetadata": {
+      "id": "runMetadata",
+      "type": "switch",
+      "value": false
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "8c2d2a18-87fc-5db1-905d-7682b186fc1d": {
+    "id": "8c2d2a18-87fc-5db1-905d-7682b186fc1d",
+    "type": "function",
+    "name": "Texas checklist",
+    "position": {
+     "x": 380,
+     "y": 200
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "code": {
+      "id": "code",
+      "type": "code",
+      "value": "// Texas resale file pre-review. Runs as the \"Texas checklist\" Function block in Sim.\n// Input: <start.file>, a transaction file as structured data (cover sheet, tax record, documents).\n// Output: { decision: \"clear\" | \"hold\" | \"escalate\", issues: [{code, severity, detail}], summary }\n// \"clear\" means ready for the Texas broker review stage. It never approves a commission payout.\nconst file = <start.file>;\nconst off = new Set((file.test_options && file.test_options.disabled_checks) || []); // ablation test only\n\nconst cs = file.cover_sheet;\nconst tax = file.tax_record || {};\nconst docs = file.documents || [];\nconst issues = [];\nconst add = (code, severity, detail) => issues.push({ code, severity, detail });\n\nconst norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');\nconst sameAddress = (a, b) => norm(a) === norm(b);\nconst days = (a, b) => Math.round((new Date(b) - new Date(a)) / 86400000);\n\n// 1. Documents filed under another property (Side's \"document from another transaction\")\nconst ownDocs = [];\nfor (const d of docs) {\n  if (!off.has('wrong_file') && d.address && !sameAddress(d.address, cs.address)) {\n    add('WRONG_TRANSACTION_DOC', 'hold', `${d.type} is for ${d.address}, not ${cs.address}`);\n  } else {\n    ownDocs.push(d);\n  }\n}\nconst find = (type) => ownDocs.find((d) => d.type === type);\nconst has = (type) => Boolean(find(type));\n\n// 2. Property facts must match the county tax record\nif (!file.tax_record) {\n  add('MISSING_TAX_RECORD', 'hold', 'no tax record in file'); // a common return reason in Side's guide\n} else if (!off.has('tax_match')) {\n  if (!sameAddress(cs.address, tax.address)) {\n    add('PROPERTY_MISMATCH', 'hold', `cover sheet address ${cs.address} vs tax record ${tax.address}`);\n  }\n  if (cs.year_built && tax.year_built && Number(cs.year_built) !== Number(tax.year_built)) {\n    add('YEAR_BUILT_MISMATCH', 'hold', `cover sheet says ${cs.year_built}, tax record says ${tax.year_built}`);\n  }\n  const sellerIsOwner = (cs.sellers || []).some((s) => norm(s) === norm(tax.owner));\n  const ownerExplained = cs.seller_type === 'estate' ? has('Letters Testamentary') : cs.seller_type === 'entity' ? has('Entity Authority') : false;\n  if (!sellerIsOwner && !ownerExplained) {\n    add('SELLER_NOT_OWNER', 'escalate', `seller ${(cs.sellers || []).join(', ')} does not match owner of record ${tax.owner}`);\n  }\n}\n\n// 3. Required documents for every Texas sale file\nif (!off.has('iabs') && !has('IABS')) {\n  add('MISSING_IABS', 'hold', 'Information About Brokerage Services notice (TREC IABS 1-2) not in file');\n}\nconst contract = find('Resale Contract');\nif (!contract) {\n  add('MISSING_CONTRACT', 'hold', 'One to Four Family Residential Contract (TREC 20-18) not in file');\n} else if (!off.has('signatures')) {\n  const needed = [...(cs.buyers || []), ...(cs.sellers || [])];\n  const missing = needed.filter((p) => !(contract.signed_by || []).map(norm).includes(norm(p)));\n  if (missing.length) add('CONTRACT_NOT_EXECUTED', 'hold', `contract missing signature(s): ${missing.join(', ')}`);\n}\n\n// 4. Conditional addenda (TREC 20-18 paragraph 22)\nif (!off.has('financing') && cs.financing !== 'cash' && !has('Third Party Financing Addendum')) {\n  add('MISSING_TPF_ADDENDUM', 'hold', `${cs.financing} financing but no Third Party Financing Addendum`);\n}\nif (!off.has('hoa') && cs.hoa && !has('HOA Addendum')) {\n  add('MISSING_HOA_ADDENDUM', 'hold', 'property is in a mandatory owners association but no HOA addendum');\n}\nconst builtYear = Number(tax.year_built || cs.year_built); // tax record wins\nif (!off.has('lead_paint') && builtYear && builtYear < 1978) {\n  const lbp = find('Lead-Based Paint Addendum');\n  if (!lbp) {\n    add('MISSING_LBP_ADDENDUM', 'hold', `built ${builtYear}, before 1978, but no lead-based paint addendum`);\n  } else if (contract && lbp.date && contract.date && new Date(lbp.date) > new Date(contract.date)) {\n    add('LBP_AFTER_CONTRACT', 'escalate', `lead-based paint addendum dated ${lbp.date}, after the contract (${contract.date})`);\n  }\n}\n\n// 5. Seller's Disclosure Notice (Tex. Prop. Code 5.008), with the exemptions a file can show\nconst sdnExempt = ['estate', 'foreclosure', 'government', 'new_construction'].includes(cs.seller_type);\nif (!off.has('seller_disclosure') && !sdnExempt && !has(\"Seller's Disclosure Notice\")) {\n  add('MISSING_SELLER_DISCLOSURE', 'hold', \"Seller's Disclosure Notice not in file and no exemption shown\");\n}\n\n// 6. Entity sellers need proof of signing authority\nif (!off.has('authority') && cs.seller_type === 'entity' && !has('Entity Authority')) {\n  add('MISSING_ENTITY_AUTHORITY', 'hold', 'entity seller but no articles or resolution showing who can sign');\n}\n\n// 7. Earnest money: within 3 days after the Effective Date (TREC 20-18 paragraph 5)\nif (!off.has('earnest_money') && cs.status !== 'terminated') {\n  const em = find('Earnest Money Receipt');\n  if (!em) {\n    add('MISSING_EM_RECEIPT', 'hold', 'no earnest money receipt from the escrow agent');\n  } else if (cs.effective_date && days(cs.effective_date, em.date) > 3) {\n    add('EM_LATE', 'escalate', `earnest money receipted ${em.date}, ${days(cs.effective_date, em.date)} days after the ${cs.effective_date} Effective Date`);\n  }\n}\n\n// 8. Terminated files need a signed release of earnest money\nif (!off.has('termination') && cs.status === 'terminated' && !has('Release of Earnest Money')) {\n  add('MISSING_EM_RELEASE', 'hold', 'file is terminated but there is no Release of Earnest Money');\n}\n\n// 9. Closed files: final closing statement must match the cover sheet\nif (!off.has('closing') && cs.status === 'closed') {\n  const st = find('Closing Statement');\n  if (!st) {\n    add('MISSING_CLOSING_STATEMENT', 'hold', 'closed file but no final closing statement');\n  } else {\n    if (Number(st.price) !== Number(cs.price)) add('CLOSING_PRICE_MISMATCH', 'escalate', `closing statement price ${st.price} vs cover sheet ${cs.price}`);\n    if (st.close_date !== cs.close_date) add('CLOSING_DATE_MISMATCH', 'escalate', `closing statement date ${st.close_date} vs cover sheet ${cs.close_date}`);\n  }\n}\n\nconst decision = issues.some((i) => i.severity === 'escalate') ? 'escalate' : issues.length ? 'hold' : 'clear';\nconst summary = decision === 'clear'\n  ? `${cs.address}: no issues found, ready for broker review`\n  : `${cs.address}: ${issues.length} issue(s), ${decision}`;\nreturn { file_id: file.file_id, decision, issues, summary };\n"
+     },
+     "language": {
+      "id": "language",
+      "type": "dropdown",
+      "value": "javascript"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "41e1aa3e-2a13-5f83-b07e-3d365e760692": {
+    "id": "41e1aa3e-2a13-5f83-b07e-3d365e760692",
+    "type": "condition",
+    "name": "Route",
+    "position": {
+     "x": 760,
+     "y": 200
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "conditions": {
+      "id": "conditions",
+      "type": "condition-input",
+      "value": "[{\"id\": \"41e1aa3e-2a13-5f83-b07e-3d365e760692-if\", \"title\": \"if\", \"value\": \"<texaschecklist.result.decision> === 'clear'\"}, {\"id\": \"41e1aa3e-2a13-5f83-b07e-3d365e760692-else-if-hold\", \"title\": \"else if\", \"value\": \"<texaschecklist.result.decision> === 'hold'\"}, {\"id\": \"41e1aa3e-2a13-5f83-b07e-3d365e760692-else\", \"title\": \"else\", \"value\": \"\"}]"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "11f6bb43-4d6e-50bd-a798-c68fdbe3c297": {
+    "id": "11f6bb43-4d6e-50bd-a798-c68fdbe3c297",
+    "type": "response",
+    "name": "Ready for broker review",
+    "position": {
+     "x": 1140,
+     "y": 0
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "data": {
+      "id": "data",
+      "type": "code",
+      "value": "{\n  \"file_id\": \"<texaschecklist.result.file_id>\",\n  \"outcome\": \"ready_for_broker_review\",\n  \"issues\": <texaschecklist.result.issues>,\n  \"summary\": \"<texaschecklist.result.summary>\"\n}"
+     },
+     "status": {
+      "id": "status",
+      "type": "short-input",
+      "value": "200"
+     },
+     "dataMode": {
+      "id": "dataMode",
+      "type": "dropdown",
+      "value": "json"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021": {
+    "id": "6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021",
+    "type": "condition",
+    "name": "Draft note?",
+    "position": {
+     "x": 1140,
+     "y": 220
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "conditions": {
+      "id": "conditions",
+      "type": "condition-input",
+      "value": "[{\"id\": \"6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021-if\", \"title\": \"if\", \"value\": \"<start.draft_note> === true\"}, {\"id\": \"6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021-else\", \"title\": \"else\", \"value\": \"\"}]"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "b564a56d-7e01-5198-ba4a-f28555356426": {
+    "id": "b564a56d-7e01-5198-ba4a-f28555356426",
+    "type": "response",
+    "name": "Compliance hold (note drafted)",
+    "position": {
+     "x": 1900,
+     "y": 140
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "data": {
+      "id": "data",
+      "type": "code",
+      "value": "{\n  \"file_id\": \"<texaschecklist.result.file_id>\",\n  \"outcome\": \"compliance_hold\",\n  \"issues\": <texaschecklist.result.issues>,\n  \"draft_note\": <draftholdnote.content>,\n  \"summary\": \"<texaschecklist.result.summary>\"\n}"
+     },
+     "status": {
+      "id": "status",
+      "type": "short-input",
+      "value": "200"
+     },
+     "dataMode": {
+      "id": "dataMode",
+      "type": "dropdown",
+      "value": "json"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   },
+   "dcd7c2a4-cc78-58a6-947c-baf8bf602e2f": {
+    "id": "dcd7c2a4-cc78-58a6-947c-baf8bf602e2f",
+    "type": "response",
+    "name": "Compliance hold",
+    "position": {
+     "x": 1520,
+     "y": 340
+    },
+    "enabled": true,
+    "horizontalHandles": true,
+    "advancedMode": false,
+    "errorEnabled": false,
+    "triggerMode": false,
+    "height": 0,
+    "subBlocks": {
+     "data": {
+      "id": "data",
+      "type": "code",
+      "value": "{\n  \"file_id\": \"<texaschecklist.result.file_id>\",\n  \"outcome\": \"compliance_hold\",\n  \"issues\": <texaschecklist.result.issues>,\n  \"summary\": \"<texaschecklist.result.summary>\"\n}"
+     },
+     "status": {
+      "id": "status",
+      "type": "short-input",
+      "value": "200"
+     },
+     "dataMode": {
+      "id": "dataMode",
+      "type": "dropdown",
+      "value": "json"
+     }
+    },
+    "outputs": {},
+    "data": {},
+    "locked": false
+   }
+  },
+  "edges": [
+   {
+    "id": "e940a098-64a8-54df-a7e9-eb13f958ed8a",
+    "source": "c7811ec9-823e-59b8-98e1-e4c329a10d4c",
+    "target": "8c2d2a18-87fc-5db1-905d-7682b186fc1d",
+    "sourceHandle": "source",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "baefddda-8e4e-5789-9bc0-7512f2953660",
+    "source": "8c2d2a18-87fc-5db1-905d-7682b186fc1d",
+    "target": "41e1aa3e-2a13-5f83-b07e-3d365e760692",
+    "sourceHandle": "source",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "ed581833-5a91-5a73-8a6e-f6ce0c691ea6",
+    "source": "41e1aa3e-2a13-5f83-b07e-3d365e760692",
+    "target": "11f6bb43-4d6e-50bd-a798-c68fdbe3c297",
+    "sourceHandle": "condition-41e1aa3e-2a13-5f83-b07e-3d365e760692-if",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "f1217cc2-f6f4-5ab0-b232-f1c44dc86334",
+    "source": "41e1aa3e-2a13-5f83-b07e-3d365e760692",
+    "target": "6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021",
+    "sourceHandle": "condition-41e1aa3e-2a13-5f83-b07e-3d365e760692-else-if-hold",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "af90e54f-890b-5c35-a67a-e9c8f169a8ec",
+    "source": "41e1aa3e-2a13-5f83-b07e-3d365e760692",
+    "target": "b2506997-acbd-5a97-9365-ef7afb01a80a",
+    "sourceHandle": "condition-41e1aa3e-2a13-5f83-b07e-3d365e760692-else",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "b39e518d-5d17-55e4-bd1e-576fe6074ced",
+    "source": "6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021",
+    "target": "27510e2d-64ec-57cf-a1e5-fe260e80c1d0",
+    "sourceHandle": "condition-6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021-if",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "5f4cb9bc-ce76-5cfd-94ae-8d5d364d8274",
+    "source": "6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021",
+    "target": "dcd7c2a4-cc78-58a6-947c-baf8bf602e2f",
+    "sourceHandle": "condition-6107c94e-0ab1-5a7c-8e7b-5ba0f7e2d021-else",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   },
+   {
+    "id": "0e325269-bff1-5565-830b-c4aec83e249e",
+    "source": "27510e2d-64ec-57cf-a1e5-fe260e80c1d0",
+    "target": "b564a56d-7e01-5198-ba4a-f28555356426",
+    "sourceHandle": "source",
+    "targetHandle": "target",
+    "type": "default",
+    "data": {}
+   }
+  ],
+  "loops": {},
+  "parallels": {},
+  "variables": {}
+ },
+ "variables": {}
+}

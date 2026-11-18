@@ -1,0 +1,394 @@
+[
+ {
+  "case": 1,
+  "sent_at": "2026-11-18T09:30:41.007469Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-1001",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "2207 Larkspur Trace, Austin, TX 78745: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 2,
+  "sent_at": "2026-11-18T09:30:41.211033Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-1002",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "918 Quarry Hollow Dr, San Antonio, TX 78258: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 3,
+  "sent_at": "2026-11-18T09:30:41.456472Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-1003",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "4410 Cypress Wren Ln, Katy, TX 77494: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 4,
+  "sent_at": "2026-11-18T09:30:41.616993Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-1004",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "1312 Pecan Grove St, Houston, TX 77008: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 5,
+  "sent_at": "2026-11-18T09:30:41.796616Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-1005",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "77 Bluebonnet Ridge, Round Rock, TX 78664: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 6,
+  "sent_at": "2026-11-18T09:30:41.934019Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-1006",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "5120 Heron Point Ct, Frisco, TX 75034: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 7,
+  "sent_at": "2026-11-18T09:30:42.086873Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2001",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_IABS",
+     "severity": "hold",
+     "detail": "Information About Brokerage Services notice (TREC IABS 1-2) not in file"
+    }
+   ],
+   "summary": "6034 Saddle Creek Rd, Fort Worth, TX 76132: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 8,
+  "sent_at": "2026-11-18T09:30:42.440450Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2002",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_TPF_ADDENDUM",
+     "severity": "hold",
+     "detail": "FHA financing but no Third Party Financing Addendum"
+    }
+   ],
+   "summary": "240 Mesquite Bend, Georgetown, TX 78628: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 9,
+  "sent_at": "2026-11-18T09:30:42.609426Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2003",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_HOA_ADDENDUM",
+     "severity": "hold",
+     "detail": "property is in a mandatory owners association but no HOA addendum"
+    }
+   ],
+   "summary": "3318 Willow Lake Dr, Sugar Land, TX 77479: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 10,
+  "sent_at": "2026-11-18T09:30:42.781685Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2004",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_LBP_ADDENDUM",
+     "severity": "hold",
+     "detail": "built 1972, before 1978, but no lead-based paint addendum"
+    }
+   ],
+   "summary": "901 Elmhurst Ave, Dallas, TX 75214: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 11,
+  "sent_at": "2026-11-18T09:30:42.952474Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2005",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_SELLER_DISCLOSURE",
+     "severity": "hold",
+     "detail": "Seller's Disclosure Notice not in file and no exemption shown"
+    }
+   ],
+   "summary": "1450 Prairie Clover Way, Plano, TX 75023: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 12,
+  "sent_at": "2026-11-18T09:30:43.156326Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2006",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_EM_RELEASE",
+     "severity": "hold",
+     "detail": "file is terminated but there is no Release of Earnest Money"
+    }
+   ],
+   "summary": "8823 Canyon Oak Trl, Austin, TX 78759: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 13,
+  "sent_at": "2026-11-18T09:30:43.320968Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2007",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_ENTITY_AUTHORITY",
+     "severity": "hold",
+     "detail": "entity seller but no articles or resolution showing who can sign"
+    }
+   ],
+   "summary": "12 Harbor Light Ln, League City, TX 77573: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 14,
+  "sent_at": "2026-11-18T09:30:43.513340Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-2008",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "CONTRACT_NOT_EXECUTED",
+     "severity": "hold",
+     "detail": "contract missing signature(s): Mira Feld"
+    }
+   ],
+   "summary": "3907 Lantana Hill, McKinney, TX 75070: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 15,
+  "sent_at": "2026-11-18T09:30:43.712617Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-3001",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "615 Ash Street, Waco, TX 76704: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 16,
+  "sent_at": "2026-11-18T09:30:43.896896Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-3002",
+   "outcome": "ready_for_broker_review",
+   "issues": [],
+   "summary": "2711 Maple Terrace, Arlington, TX 76015: no issues found, ready for broker review"
+  }
+ },
+ {
+  "case": 17,
+  "sent_at": "2026-11-18T09:30:44.067632Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-3003",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "YEAR_BUILT_MISMATCH",
+     "severity": "hold",
+     "detail": "cover sheet says 1985, tax record says 1975"
+    },
+    {
+     "code": "MISSING_LBP_ADDENDUM",
+     "severity": "hold",
+     "detail": "built 1975, before 1978, but no lead-based paint addendum"
+    }
+   ],
+   "summary": "4502 Juniper Hill Rd, Austin, TX 78731: 2 issue(s), hold"
+  }
+ },
+ {
+  "case": 18,
+  "sent_at": "2026-11-18T09:30:44.272243Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-3004",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "WRONG_TRANSACTION_DOC",
+     "severity": "hold",
+     "detail": "HOA Addendum is for 1108 Sycamore Bend, Cedar Park, TX 78613, not 1180 Sycamore Bend, Cedar Park, TX 78613"
+    },
+    {
+     "code": "MISSING_HOA_ADDENDUM",
+     "severity": "hold",
+     "detail": "property is in a mandatory owners association but no HOA addendum"
+    }
+   ],
+   "summary": "1180 Sycamore Bend, Cedar Park, TX 78613: 2 issue(s), hold"
+  }
+ },
+ {
+  "case": 19,
+  "sent_at": "2026-11-18T09:30:44.454488Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-3005",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "MISSING_TPF_ADDENDUM",
+     "severity": "hold",
+     "detail": "VA financing but no Third Party Financing Addendum"
+    },
+    {
+     "code": "MISSING_HOA_ADDENDUM",
+     "severity": "hold",
+     "detail": "property is in a mandatory owners association but no HOA addendum"
+    }
+   ],
+   "summary": "7340 Stonewall Pass, Frisco, TX 75036: 2 issue(s), hold"
+  }
+ },
+ {
+  "case": 20,
+  "sent_at": "2026-11-18T09:30:44.680914Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-3006",
+   "outcome": "compliance_hold",
+   "issues": [
+    {
+     "code": "PROPERTY_MISMATCH",
+     "severity": "hold",
+     "detail": "cover sheet address 2291 Brazos View Dr, Bryan, TX 77803 vs tax record 2219 Brazos View Dr, Bryan, TX 77803"
+    }
+   ],
+   "summary": "2291 Brazos View Dr, Bryan, TX 77803: 1 issue(s), hold"
+  }
+ },
+ {
+  "case": 21,
+  "sent_at": "2026-11-18T09:30:44.890392Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-4001",
+   "outcome": "escalate_to_broker",
+   "issues": [
+    {
+     "code": "SELLER_NOT_OWNER",
+     "severity": "escalate",
+     "detail": "seller James Ward does not match owner of record Ward Family Trust"
+    }
+   ],
+   "summary": "88 Live Oak Cir, Boerne, TX 78006: 1 issue(s), escalate"
+  }
+ },
+ {
+  "case": 22,
+  "sent_at": "2026-11-18T09:30:45.050597Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-4002",
+   "outcome": "escalate_to_broker",
+   "issues": [
+    {
+     "code": "CLOSING_PRICE_MISMATCH",
+     "severity": "escalate",
+     "detail": "closing statement price 532000 vs cover sheet 540000"
+    }
+   ],
+   "summary": "3301 Rio Grande St, Austin, TX 78705: 1 issue(s), escalate"
+  }
+ },
+ {
+  "case": 23,
+  "sent_at": "2026-11-18T09:30:45.207697Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-4003",
+   "outcome": "escalate_to_broker",
+   "issues": [
+    {
+     "code": "CLOSING_DATE_MISMATCH",
+     "severity": "escalate",
+     "detail": "closing statement date 2026-11-10 vs cover sheet 2026-11-06"
+    }
+   ],
+   "summary": "509 Magnolia Pl, The Woodlands, TX 77380: 1 issue(s), escalate"
+  }
+ },
+ {
+  "case": 24,
+  "sent_at": "2026-11-18T09:30:45.387047Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-4004",
+   "outcome": "escalate_to_broker",
+   "issues": [
+    {
+     "code": "EM_LATE",
+     "severity": "escalate",
+     "detail": "earnest money receipted 2026-10-12, 6 days after the 2026-10-06 Effective Date"
+    }
+   ],
+   "summary": "1600 Vista Ridge Dr, El Paso, TX 79912: 1 issue(s), escalate"
+  }
+ },
+ {
+  "case": 25,
+  "sent_at": "2026-11-18T09:30:45.547562Z",
+  "request": "POST /api/workflows/<workflow-id>/execute",
+  "response": {
+   "file_id": "TX-4005",
+   "outcome": "escalate_to_broker",
+   "issues": [
+    {
+     "code": "LBP_AFTER_CONTRACT",
+     "severity": "escalate",
+     "detail": "lead-based paint addendum dated 2026-10-14, after the contract (2026-10-06)"
+    }
+   ],
+   "summary": "422 Oakmont Dr, Tyler, TX 75701: 1 issue(s), escalate"
+  }
+ }
+]

@@ -1,0 +1,1868 @@
+[
+ {
+  "id": 1,
+  "tier": "T1",
+  "title": "Financed sale, all documents present",
+  "file": {
+   "file_id": "TX-1001",
+   "cover_sheet": {
+    "file_id": "TX-1001",
+    "address": "2207 Larkspur Trace, Austin, TX 78745",
+    "side": "listing",
+    "status": "pending",
+    "price": 465000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 2004,
+    "seller_type": "individual",
+    "buyers": [
+     "Dana Whitfield"
+    ],
+    "sellers": [
+     "Marcus Oyelaran"
+    ]
+   },
+   "tax_record": {
+    "owner": "Marcus Oyelaran",
+    "address": "2207 Larkspur Trace, Austin, TX 78745",
+    "apn": "R206153",
+    "year_built": 2004
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "2207 Larkspur Trace, Austin, TX 78745",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "2207 Larkspur Trace, Austin, TX 78745",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Dana Whitfield",
+      "Marcus Oyelaran"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "2207 Larkspur Trace, Austin, TX 78745",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "2207 Larkspur Trace, Austin, TX 78745",
+     "date": "2026-10-08",
+     "amount": 4650
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "2207 Larkspur Trace, Austin, TX 78745",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Standard financed resale with every required document."
+ },
+ {
+  "id": 2,
+  "tier": "T1",
+  "title": "Cash sale, no financing addendum needed",
+  "file": {
+   "file_id": "TX-1002",
+   "cover_sheet": {
+    "file_id": "TX-1002",
+    "address": "918 Quarry Hollow Dr, San Antonio, TX 78258",
+    "side": "listing",
+    "status": "pending",
+    "price": 389000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "cash",
+    "hoa": false,
+    "year_built": 2011,
+    "seller_type": "individual",
+    "buyers": [
+     "Priya Raman"
+    ],
+    "sellers": [
+     "Helen Castillo"
+    ]
+   },
+   "tax_record": {
+    "owner": "Helen Castillo",
+    "address": "918 Quarry Hollow Dr, San Antonio, TX 78258",
+    "apn": "R225393",
+    "year_built": 2011
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "918 Quarry Hollow Dr, San Antonio, TX 78258",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "918 Quarry Hollow Dr, San Antonio, TX 78258",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Priya Raman",
+      "Helen Castillo"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "918 Quarry Hollow Dr, San Antonio, TX 78258",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "918 Quarry Hollow Dr, San Antonio, TX 78258",
+     "date": "2026-10-08",
+     "amount": 3890
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Cash buyers do not need the Third Party Financing Addendum."
+ },
+ {
+  "id": 3,
+  "tier": "T1",
+  "title": "HOA property with HOA addendum",
+  "file": {
+   "file_id": "TX-1003",
+   "cover_sheet": {
+    "file_id": "TX-1003",
+    "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+    "side": "listing",
+    "status": "pending",
+    "price": 512000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": true,
+    "year_built": 2016,
+    "seller_type": "individual",
+    "buyers": [
+     "Owen Brandt",
+     "Lia Brandt"
+    ],
+    "sellers": [
+     "Tomasz Nowak"
+    ]
+   },
+   "tax_record": {
+    "owner": "Tomasz Nowak",
+    "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+    "apn": "R199012",
+    "year_built": 2016
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Owen Brandt",
+      "Lia Brandt",
+      "Tomasz Nowak"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+     "date": "2026-10-08",
+     "amount": 5120
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "HOA Addendum",
+     "form": "TREC 36-10",
+     "address": "4410 Cypress Wren Ln, Katy, TX 77494",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Mandatory owners association, addendum present."
+ },
+ {
+  "id": 4,
+  "tier": "T1",
+  "title": "1965 home with lead-based paint addendum signed with the contract",
+  "file": {
+   "file_id": "TX-1004",
+   "cover_sheet": {
+    "file_id": "TX-1004",
+    "address": "1312 Pecan Grove St, Houston, TX 77008",
+    "side": "listing",
+    "status": "pending",
+    "price": 598000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1965,
+    "seller_type": "individual",
+    "buyers": [
+     "Jun Park"
+    ],
+    "sellers": [
+     "Ruth Adeyemi"
+    ]
+   },
+   "tax_record": {
+    "owner": "Ruth Adeyemi",
+    "address": "1312 Pecan Grove St, Houston, TX 77008",
+    "apn": "R206042",
+    "year_built": 1965
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "1312 Pecan Grove St, Houston, TX 77008",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "1312 Pecan Grove St, Houston, TX 77008",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Jun Park",
+      "Ruth Adeyemi"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "1312 Pecan Grove St, Houston, TX 77008",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "1312 Pecan Grove St, Houston, TX 77008",
+     "date": "2026-10-08",
+     "amount": 5980
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "1312 Pecan Grove St, Houston, TX 77008",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Lead-Based Paint Addendum",
+     "form": "TREC OP-L",
+     "address": "1312 Pecan Grove St, Houston, TX 77008",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Pre-1978 home, addendum dated the same day as the contract."
+ },
+ {
+  "id": 5,
+  "tier": "T1",
+  "title": "Closed file, closing statement matches",
+  "file": {
+   "file_id": "TX-1005",
+   "cover_sheet": {
+    "file_id": "TX-1005",
+    "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+    "side": "listing",
+    "status": "closed",
+    "price": 342500,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1999,
+    "seller_type": "individual",
+    "buyers": [
+     "Sam Ortiz"
+    ],
+    "sellers": [
+     "Kelly Huang"
+    ]
+   },
+   "tax_record": {
+    "owner": "Kelly Huang",
+    "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+    "apn": "R221397",
+    "year_built": 1999
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Sam Ortiz",
+      "Kelly Huang"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+     "date": "2026-10-08",
+     "amount": 3425
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Closing Statement",
+     "address": "77 Bluebonnet Ridge, Round Rock, TX 78664",
+     "price": 342500,
+     "close_date": "2026-11-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Closed file with matching price and date."
+ },
+ {
+  "id": 6,
+  "tier": "T1",
+  "title": "Buyer-side file, conventional loan, HOA",
+  "file": {
+   "file_id": "TX-1006",
+   "cover_sheet": {
+    "file_id": "TX-1006",
+    "address": "5120 Heron Point Ct, Frisco, TX 75034",
+    "side": "buyer",
+    "status": "pending",
+    "price": 735000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": true,
+    "year_built": 2019,
+    "seller_type": "individual",
+    "buyers": [
+     "Amara Diallo"
+    ],
+    "sellers": [
+     "Victor Lindqvist"
+    ]
+   },
+   "tax_record": {
+    "owner": "Victor Lindqvist",
+    "address": "5120 Heron Point Ct, Frisco, TX 75034",
+    "apn": "R201306",
+    "year_built": 2019
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "5120 Heron Point Ct, Frisco, TX 75034",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "5120 Heron Point Ct, Frisco, TX 75034",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Amara Diallo",
+      "Victor Lindqvist"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "5120 Heron Point Ct, Frisco, TX 75034",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "5120 Heron Point Ct, Frisco, TX 75034",
+     "date": "2026-10-08",
+     "amount": 7350
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "5120 Heron Point Ct, Frisco, TX 75034",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "HOA Addendum",
+     "form": "TREC 36-10",
+     "address": "5120 Heron Point Ct, Frisco, TX 75034",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Buyer-side file with every required document."
+ },
+ {
+  "id": 7,
+  "tier": "T2",
+  "title": "Missing IABS",
+  "file": {
+   "file_id": "TX-2001",
+   "cover_sheet": {
+    "file_id": "TX-2001",
+    "address": "6034 Saddle Creek Rd, Fort Worth, TX 76132",
+    "side": "listing",
+    "status": "pending",
+    "price": 318000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1996,
+    "seller_type": "individual",
+    "buyers": [
+     "Ian Mercer"
+    ],
+    "sellers": [
+     "Gloria Reyes"
+    ]
+   },
+   "tax_record": {
+    "owner": "Gloria Reyes",
+    "address": "6034 Saddle Creek Rd, Fort Worth, TX 76132",
+    "apn": "R216624",
+    "year_built": 1996
+   },
+   "documents": [
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "6034 Saddle Creek Rd, Fort Worth, TX 76132",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Ian Mercer",
+      "Gloria Reyes"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "6034 Saddle Creek Rd, Fort Worth, TX 76132",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "6034 Saddle Creek Rd, Fort Worth, TX 76132",
+     "date": "2026-10-08",
+     "amount": 3180
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "6034 Saddle Creek Rd, Fort Worth, TX 76132",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_IABS"
+   ]
+  },
+  "why": "Most common Texas return reason in Side's own guide."
+ },
+ {
+  "id": 8,
+  "tier": "T2",
+  "title": "Financed but no Third Party Financing Addendum",
+  "file": {
+   "file_id": "TX-2002",
+   "cover_sheet": {
+    "file_id": "TX-2002",
+    "address": "240 Mesquite Bend, Georgetown, TX 78628",
+    "side": "listing",
+    "status": "pending",
+    "price": 429000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "FHA",
+    "hoa": false,
+    "year_built": 2008,
+    "seller_type": "individual",
+    "buyers": [
+     "Hana Sato"
+    ],
+    "sellers": [
+     "Derek Molloy"
+    ]
+   },
+   "tax_record": {
+    "owner": "Derek Molloy",
+    "address": "240 Mesquite Bend, Georgetown, TX 78628",
+    "apn": "R215440",
+    "year_built": 2008
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "240 Mesquite Bend, Georgetown, TX 78628",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "240 Mesquite Bend, Georgetown, TX 78628",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Hana Sato",
+      "Derek Molloy"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "240 Mesquite Bend, Georgetown, TX 78628",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "240 Mesquite Bend, Georgetown, TX 78628",
+     "date": "2026-10-08",
+     "amount": 4290
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_TPF_ADDENDUM"
+   ]
+  },
+  "why": "FHA loan, addendum missing."
+ },
+ {
+  "id": 9,
+  "tier": "T2",
+  "title": "HOA property, no HOA addendum",
+  "file": {
+   "file_id": "TX-2003",
+   "cover_sheet": {
+    "file_id": "TX-2003",
+    "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+    "side": "listing",
+    "status": "pending",
+    "price": 476000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": true,
+    "year_built": 2002,
+    "seller_type": "individual",
+    "buyers": [
+     "Ben Okafor"
+    ],
+    "sellers": [
+     "Irene Kwan"
+    ]
+   },
+   "tax_record": {
+    "owner": "Irene Kwan",
+    "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+    "apn": "R213331",
+    "year_built": 2002
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Ben Okafor",
+      "Irene Kwan"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+     "date": "2026-10-08",
+     "amount": 4760
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "3318 Willow Lake Dr, Sugar Land, TX 77479",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_HOA_ADDENDUM"
+   ]
+  },
+  "why": "Mandatory association, addendum missing."
+ },
+ {
+  "id": 10,
+  "tier": "T2",
+  "title": "1972 home, no lead-based paint addendum",
+  "file": {
+   "file_id": "TX-2004",
+   "cover_sheet": {
+    "file_id": "TX-2004",
+    "address": "901 Elmhurst Ave, Dallas, TX 75214",
+    "side": "listing",
+    "status": "pending",
+    "price": 655000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1972,
+    "seller_type": "individual",
+    "buyers": [
+     "Carla Mendes"
+    ],
+    "sellers": [
+     "Arthur Pike"
+    ]
+   },
+   "tax_record": {
+    "owner": "Arthur Pike",
+    "address": "901 Elmhurst Ave, Dallas, TX 75214",
+    "apn": "R194794",
+    "year_built": 1972
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "901 Elmhurst Ave, Dallas, TX 75214",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "901 Elmhurst Ave, Dallas, TX 75214",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Carla Mendes",
+      "Arthur Pike"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "901 Elmhurst Ave, Dallas, TX 75214",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "901 Elmhurst Ave, Dallas, TX 75214",
+     "date": "2026-10-08",
+     "amount": 6550
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "901 Elmhurst Ave, Dallas, TX 75214",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_LBP_ADDENDUM"
+   ]
+  },
+  "why": "Pre-1978 home, addendum missing."
+ },
+ {
+  "id": 11,
+  "tier": "T2",
+  "title": "Individual seller, no Seller's Disclosure Notice",
+  "file": {
+   "file_id": "TX-2005",
+   "cover_sheet": {
+    "file_id": "TX-2005",
+    "address": "1450 Prairie Clover Way, Plano, TX 75023",
+    "side": "listing",
+    "status": "pending",
+    "price": 452000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1988,
+    "seller_type": "individual",
+    "buyers": [
+     "Nina Volkova"
+    ],
+    "sellers": [
+     "George Abbott"
+    ]
+   },
+   "tax_record": {
+    "owner": "George Abbott",
+    "address": "1450 Prairie Clover Way, Plano, TX 75023",
+    "apn": "R213109",
+    "year_built": 1988
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "1450 Prairie Clover Way, Plano, TX 75023",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "1450 Prairie Clover Way, Plano, TX 75023",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Nina Volkova",
+      "George Abbott"
+     ]
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "1450 Prairie Clover Way, Plano, TX 75023",
+     "date": "2026-10-08",
+     "amount": 4520
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "1450 Prairie Clover Way, Plano, TX 75023",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_SELLER_DISCLOSURE"
+   ]
+  },
+  "why": "No exemption applies."
+ },
+ {
+  "id": 12,
+  "tier": "T2",
+  "title": "Terminated during option period, no release",
+  "file": {
+   "file_id": "TX-2006",
+   "cover_sheet": {
+    "file_id": "TX-2006",
+    "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+    "side": "listing",
+    "status": "terminated",
+    "price": 548000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1994,
+    "seller_type": "individual",
+    "buyers": [
+     "Rafael Cruz"
+    ],
+    "sellers": [
+     "Megan Doyle"
+    ]
+   },
+   "tax_record": {
+    "owner": "Megan Doyle",
+    "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+    "apn": "R202638",
+    "year_built": 1994
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Rafael Cruz",
+      "Megan Doyle"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+     "date": "2026-10-08",
+     "amount": 5480
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "8823 Canyon Oak Trl, Austin, TX 78759",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_EM_RELEASE"
+   ]
+  },
+  "why": "Side's guide lists a missing Release of Earnest Money as a common Texas return."
+ },
+ {
+  "id": 13,
+  "tier": "T2",
+  "title": "LLC seller, no proof of signing authority",
+  "file": {
+   "file_id": "TX-2007",
+   "cover_sheet": {
+    "file_id": "TX-2007",
+    "address": "12 Harbor Light Ln, League City, TX 77573",
+    "side": "listing",
+    "status": "pending",
+    "price": 389900,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 2013,
+    "seller_type": "entity",
+    "buyers": [
+     "Tess Morgan"
+    ],
+    "sellers": [
+     "Bayline Holdings LLC"
+    ]
+   },
+   "tax_record": {
+    "owner": "Bayline Holdings LLC",
+    "address": "12 Harbor Light Ln, League City, TX 77573",
+    "apn": "R216624",
+    "year_built": 2013
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "12 Harbor Light Ln, League City, TX 77573",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "12 Harbor Light Ln, League City, TX 77573",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Tess Morgan",
+      "Bayline Holdings LLC"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "12 Harbor Light Ln, League City, TX 77573",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "12 Harbor Light Ln, League City, TX 77573",
+     "date": "2026-10-08",
+     "amount": 3899
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "12 Harbor Light Ln, League City, TX 77573",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_ENTITY_AUTHORITY"
+   ]
+  },
+  "why": "Entity sellers need articles or a resolution; owner of record matches, so no escalation."
+ },
+ {
+  "id": 14,
+  "tier": "T2",
+  "title": "Contract missing one buyer's signature",
+  "file": {
+   "file_id": "TX-2008",
+   "cover_sheet": {
+    "file_id": "TX-2008",
+    "address": "3907 Lantana Hill, McKinney, TX 75070",
+    "side": "listing",
+    "status": "pending",
+    "price": 501000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 2010,
+    "seller_type": "individual",
+    "buyers": [
+     "Aaron Feld",
+     "Mira Feld"
+    ],
+    "sellers": [
+     "Paula Grant"
+    ]
+   },
+   "tax_record": {
+    "owner": "Paula Grant",
+    "address": "3907 Lantana Hill, McKinney, TX 75070",
+    "apn": "R203008",
+    "year_built": 2010
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "3907 Lantana Hill, McKinney, TX 75070",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "3907 Lantana Hill, McKinney, TX 75070",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Aaron Feld",
+      "Paula Grant"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "3907 Lantana Hill, McKinney, TX 75070",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "3907 Lantana Hill, McKinney, TX 75070",
+     "date": "2026-10-08",
+     "amount": 5010
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "3907 Lantana Hill, McKinney, TX 75070",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "CONTRACT_NOT_EXECUTED"
+   ]
+  },
+  "why": "Co-buyer did not sign."
+ },
+ {
+  "id": 15,
+  "tier": "T3",
+  "title": "Estate sale with no Seller's Disclosure Notice (exempt)",
+  "file": {
+   "file_id": "TX-3001",
+   "cover_sheet": {
+    "file_id": "TX-3001",
+    "address": "615 Ash Street, Waco, TX 76704",
+    "side": "listing",
+    "status": "pending",
+    "price": 214000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1958,
+    "seller_type": "estate",
+    "buyers": [
+     "Leo Tran"
+    ],
+    "sellers": [
+     "Estate of Doris Kell"
+    ]
+   },
+   "tax_record": {
+    "owner": "Doris Kell",
+    "address": "615 Ash Street, Waco, TX 76704",
+    "apn": "R179513",
+    "year_built": 1958
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "615 Ash Street, Waco, TX 76704",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "615 Ash Street, Waco, TX 76704",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Leo Tran",
+      "Estate of Doris Kell"
+     ]
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "615 Ash Street, Waco, TX 76704",
+     "date": "2026-10-08",
+     "amount": 2140
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "615 Ash Street, Waco, TX 76704",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Lead-Based Paint Addendum",
+     "form": "TREC OP-L",
+     "address": "615 Ash Street, Waco, TX 76704",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Letters Testamentary",
+     "address": "615 Ash Street, Waco, TX 76704",
+     "date": "2026-08-14"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "Tex. Prop. Code 5.008(e) exempts a fiduciary administering an estate; owner of record explained by letters testamentary. Must not over-flag."
+ },
+ {
+  "id": 16,
+  "tier": "T3",
+  "title": "Built in 1978 exactly, no lead-based paint addendum needed",
+  "file": {
+   "file_id": "TX-3002",
+   "cover_sheet": {
+    "file_id": "TX-3002",
+    "address": "2711 Maple Terrace, Arlington, TX 76015",
+    "side": "listing",
+    "status": "pending",
+    "price": 287000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1978,
+    "seller_type": "individual",
+    "buyers": [
+     "Elena Ruiz"
+    ],
+    "sellers": [
+     "Chris Dunn"
+    ]
+   },
+   "tax_record": {
+    "owner": "Chris Dunn",
+    "address": "2711 Maple Terrace, Arlington, TX 76015",
+    "apn": "R212073",
+    "year_built": 1978
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "2711 Maple Terrace, Arlington, TX 76015",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "2711 Maple Terrace, Arlington, TX 76015",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Elena Ruiz",
+      "Chris Dunn"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "2711 Maple Terrace, Arlington, TX 76015",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "2711 Maple Terrace, Arlington, TX 76015",
+     "date": "2026-10-08",
+     "amount": 2870
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "2711 Maple Terrace, Arlington, TX 76015",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "clear",
+   "codes": []
+  },
+  "why": "The rule covers homes built before 1978. Must not over-flag."
+ },
+ {
+  "id": 17,
+  "tier": "T3",
+  "title": "Cover sheet says 1985, tax record says 1975, no lead paint addendum",
+  "file": {
+   "file_id": "TX-3003",
+   "cover_sheet": {
+    "file_id": "TX-3003",
+    "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+    "side": "listing",
+    "status": "pending",
+    "price": 870000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1985,
+    "seller_type": "individual",
+    "buyers": [
+     "Kai Nakamura"
+    ],
+    "sellers": [
+     "Laura Bishop"
+    ]
+   },
+   "tax_record": {
+    "owner": "Laura Bishop",
+    "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+    "apn": "R205709",
+    "year_built": 1975
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Kai Nakamura",
+      "Laura Bishop"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+     "date": "2026-10-08",
+     "amount": 8700
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "4502 Juniper Hill Rd, Austin, TX 78731",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_LBP_ADDENDUM",
+    "YEAR_BUILT_MISMATCH"
+   ]
+  },
+  "why": "Only the tax record shows the home is pre-1978."
+ },
+ {
+  "id": 18,
+  "tier": "T3",
+  "title": "HOA addendum uploaded from another file (1108 vs 1180)",
+  "file": {
+   "file_id": "TX-3004",
+   "cover_sheet": {
+    "file_id": "TX-3004",
+    "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+    "side": "listing",
+    "status": "pending",
+    "price": 455000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": true,
+    "year_built": 2006,
+    "seller_type": "individual",
+    "buyers": [
+     "Joy Adams"
+    ],
+    "sellers": [
+     "Peter Holm"
+    ]
+   },
+   "tax_record": {
+    "owner": "Peter Holm",
+    "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+    "apn": "R211296",
+    "year_built": 2006
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Joy Adams",
+      "Peter Holm"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+     "date": "2026-10-08",
+     "amount": 4550
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "1180 Sycamore Bend, Cedar Park, TX 78613",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "HOA Addendum",
+     "form": "TREC 36-10",
+     "address": "1108 Sycamore Bend, Cedar Park, TX 78613",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_HOA_ADDENDUM",
+    "WRONG_TRANSACTION_DOC"
+   ]
+  },
+  "why": "The only HOA addendum belongs to a different address."
+ },
+ {
+  "id": 19,
+  "tier": "T3",
+  "title": "VA loan and HOA, both addenda missing",
+  "file": {
+   "file_id": "TX-3005",
+   "cover_sheet": {
+    "file_id": "TX-3005",
+    "address": "7340 Stonewall Pass, Frisco, TX 75036",
+    "side": "listing",
+    "status": "pending",
+    "price": 689000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "VA",
+    "hoa": true,
+    "year_built": 2015,
+    "seller_type": "individual",
+    "buyers": [
+     "Will Chen"
+    ],
+    "sellers": [
+     "Ana Ferreira"
+    ]
+   },
+   "tax_record": {
+    "owner": "Ana Ferreira",
+    "address": "7340 Stonewall Pass, Frisco, TX 75036",
+    "apn": "R205857",
+    "year_built": 2015
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "7340 Stonewall Pass, Frisco, TX 75036",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "7340 Stonewall Pass, Frisco, TX 75036",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Will Chen",
+      "Ana Ferreira"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "7340 Stonewall Pass, Frisco, TX 75036",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "7340 Stonewall Pass, Frisco, TX 75036",
+     "date": "2026-10-08",
+     "amount": 6890
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "MISSING_HOA_ADDENDUM",
+    "MISSING_TPF_ADDENDUM"
+   ]
+  },
+  "why": "Two issues in one note."
+ },
+ {
+  "id": 20,
+  "tier": "T3",
+  "title": "Street number transposed on every document vs tax record",
+  "file": {
+   "file_id": "TX-3006",
+   "cover_sheet": {
+    "file_id": "TX-3006",
+    "address": "2291 Brazos View Dr, Bryan, TX 77803",
+    "side": "listing",
+    "status": "pending",
+    "price": 305000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1990,
+    "seller_type": "individual",
+    "buyers": [
+     "Grace Lee"
+    ],
+    "sellers": [
+     "Tom Becker"
+    ]
+   },
+   "tax_record": {
+    "owner": "Tom Becker",
+    "address": "2219 Brazos View Dr, Bryan, TX 77803",
+    "apn": "R198013",
+    "year_built": 1990
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "2291 Brazos View Dr, Bryan, TX 77803",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "2291 Brazos View Dr, Bryan, TX 77803",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Grace Lee",
+      "Tom Becker"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "2291 Brazos View Dr, Bryan, TX 77803",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "2291 Brazos View Dr, Bryan, TX 77803",
+     "date": "2026-10-08",
+     "amount": 3050
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "2291 Brazos View Dr, Bryan, TX 77803",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "hold",
+   "codes": [
+    "PROPERTY_MISMATCH"
+   ]
+  },
+  "why": "File is internally consistent but does not match the county record."
+ },
+ {
+  "id": 21,
+  "tier": "T4",
+  "title": "Seller is not the owner of record",
+  "file": {
+   "file_id": "TX-4001",
+   "cover_sheet": {
+    "file_id": "TX-4001",
+    "address": "88 Live Oak Cir, Boerne, TX 78006",
+    "side": "listing",
+    "status": "pending",
+    "price": 615000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 2001,
+    "seller_type": "individual",
+    "buyers": [
+     "Nora Field"
+    ],
+    "sellers": [
+     "James Ward"
+    ]
+   },
+   "tax_record": {
+    "owner": "Ward Family Trust",
+    "address": "88 Live Oak Cir, Boerne, TX 78006",
+    "apn": "R188689",
+    "year_built": 2001
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "88 Live Oak Cir, Boerne, TX 78006",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "88 Live Oak Cir, Boerne, TX 78006",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Nora Field",
+      "James Ward"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "88 Live Oak Cir, Boerne, TX 78006",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "88 Live Oak Cir, Boerne, TX 78006",
+     "date": "2026-10-08",
+     "amount": 6150
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "88 Live Oak Cir, Boerne, TX 78006",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "escalate",
+   "codes": [
+    "SELLER_NOT_OWNER"
+   ]
+  },
+  "why": "Possible trust or title problem; a broker decides what is needed."
+ },
+ {
+  "id": 22,
+  "tier": "T4",
+  "title": "Closing statement price differs from cover sheet",
+  "file": {
+   "file_id": "TX-4002",
+   "cover_sheet": {
+    "file_id": "TX-4002",
+    "address": "3301 Rio Grande St, Austin, TX 78705",
+    "side": "listing",
+    "status": "closed",
+    "price": 540000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1997,
+    "seller_type": "individual",
+    "buyers": [
+     "Ethan Cole"
+    ],
+    "sellers": [
+     "Maya Singh"
+    ]
+   },
+   "tax_record": {
+    "owner": "Maya Singh",
+    "address": "3301 Rio Grande St, Austin, TX 78705",
+    "apn": "R197532",
+    "year_built": 1997
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "3301 Rio Grande St, Austin, TX 78705",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "3301 Rio Grande St, Austin, TX 78705",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Ethan Cole",
+      "Maya Singh"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "3301 Rio Grande St, Austin, TX 78705",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "3301 Rio Grande St, Austin, TX 78705",
+     "date": "2026-10-08",
+     "amount": 5400
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "3301 Rio Grande St, Austin, TX 78705",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Closing Statement",
+     "address": "3301 Rio Grande St, Austin, TX 78705",
+     "price": 532000,
+     "close_date": "2026-11-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "escalate",
+   "codes": [
+    "CLOSING_PRICE_MISMATCH"
+   ]
+  },
+  "why": "Commission is calculated from price; payout must not run on the wrong number."
+ },
+ {
+  "id": 23,
+  "tier": "T4",
+  "title": "Closing statement date differs from cover sheet",
+  "file": {
+   "file_id": "TX-4003",
+   "cover_sheet": {
+    "file_id": "TX-4003",
+    "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+    "side": "listing",
+    "status": "closed",
+    "price": 720000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 2009,
+    "seller_type": "individual",
+    "buyers": [
+     "Ivy Brooks"
+    ],
+    "sellers": [
+     "Hugo Martin"
+    ]
+   },
+   "tax_record": {
+    "owner": "Hugo Martin",
+    "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+    "apn": "R214663",
+    "year_built": 2009
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Ivy Brooks",
+      "Hugo Martin"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+     "date": "2026-10-08",
+     "amount": 7200
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Closing Statement",
+     "address": "509 Magnolia Pl, The Woodlands, TX 77380",
+     "price": 720000,
+     "close_date": "2026-11-10"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "escalate",
+   "codes": [
+    "CLOSING_DATE_MISMATCH"
+   ]
+  },
+  "why": "Close date drives review priority and the 8-day upload window."
+ },
+ {
+  "id": 24,
+  "tier": "T4",
+  "title": "Earnest money receipted 6 days after the Effective Date",
+  "file": {
+   "file_id": "TX-4004",
+   "cover_sheet": {
+    "file_id": "TX-4004",
+    "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+    "side": "listing",
+    "status": "pending",
+    "price": 398000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 2012,
+    "seller_type": "individual",
+    "buyers": [
+     "Ruben Soto"
+    ],
+    "sellers": [
+     "Clare Young"
+    ]
+   },
+   "tax_record": {
+    "owner": "Clare Young",
+    "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+    "apn": "R200751",
+    "year_built": 2012
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Ruben Soto",
+      "Clare Young"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+     "date": "2026-10-12",
+     "amount": 3980
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "1600 Vista Ridge Dr, El Paso, TX 79912",
+     "date": "2026-10-06"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "escalate",
+   "codes": [
+    "EM_LATE"
+   ]
+  },
+  "why": "TREC 20-18 paragraph 5 gives 3 days; a late deposit can put the buyer in default, which is a broker call."
+ },
+ {
+  "id": 25,
+  "tier": "T4",
+  "title": "Lead-based paint addendum signed after the contract",
+  "file": {
+   "file_id": "TX-4005",
+   "cover_sheet": {
+    "file_id": "TX-4005",
+    "address": "422 Oakmont Dr, Tyler, TX 75701",
+    "side": "listing",
+    "status": "pending",
+    "price": 268000,
+    "effective_date": "2026-10-06",
+    "close_date": "2026-11-06",
+    "financing": "conventional",
+    "hoa": false,
+    "year_built": 1969,
+    "seller_type": "individual",
+    "buyers": [
+     "Dev Patel"
+    ],
+    "sellers": [
+     "Marion Fisk"
+    ]
+   },
+   "tax_record": {
+    "owner": "Marion Fisk",
+    "address": "422 Oakmont Dr, Tyler, TX 75701",
+    "apn": "R184027",
+    "year_built": 1969
+   },
+   "documents": [
+    {
+     "type": "IABS",
+     "address": "422 Oakmont Dr, Tyler, TX 75701",
+     "date": "2026-09-20"
+    },
+    {
+     "type": "Resale Contract",
+     "form": "TREC 20-18",
+     "address": "422 Oakmont Dr, Tyler, TX 75701",
+     "date": "2026-10-06",
+     "signed_by": [
+      "Dev Patel",
+      "Marion Fisk"
+     ]
+    },
+    {
+     "type": "Seller's Disclosure Notice",
+     "address": "422 Oakmont Dr, Tyler, TX 75701",
+     "date": "2026-09-28"
+    },
+    {
+     "type": "Earnest Money Receipt",
+     "address": "422 Oakmont Dr, Tyler, TX 75701",
+     "date": "2026-10-08",
+     "amount": 2680
+    },
+    {
+     "type": "Third Party Financing Addendum",
+     "form": "TREC 40-11",
+     "address": "422 Oakmont Dr, Tyler, TX 75701",
+     "date": "2026-10-06"
+    },
+    {
+     "type": "Lead-Based Paint Addendum",
+     "form": "TREC OP-L",
+     "address": "422 Oakmont Dr, Tyler, TX 75701",
+     "date": "2026-10-14"
+    }
+   ]
+  },
+  "expected": {
+   "decision": "escalate",
+   "codes": [
+    "LBP_AFTER_CONTRACT"
+   ]
+  },
+  "why": "Federal rule requires the disclosure before the buyer is obligated; uploading a form cannot fix this."
+ }
+]

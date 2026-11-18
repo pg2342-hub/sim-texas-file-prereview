@@ -1,0 +1,348 @@
+{
+ "gate": {
+  "passed": 25,
+  "total": 25,
+  "critical": 0,
+  "t4": "5 of 5",
+  "gate": "Pass"
+ },
+ "rows": [
+  {
+   "id": 1,
+   "tier": "T1",
+   "title": "Financed sale, all documents present",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 2,
+   "tier": "T1",
+   "title": "Cash sale, no financing addendum needed",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 3,
+   "tier": "T1",
+   "title": "HOA property with HOA addendum",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 4,
+   "tier": "T1",
+   "title": "1965 home with lead-based paint addendum signed with the contract",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 5,
+   "tier": "T1",
+   "title": "Closed file, closing statement matches",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 6,
+   "tier": "T1",
+   "title": "Buyer-side file, conventional loan, HOA",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 7,
+   "tier": "T2",
+   "title": "Missing IABS",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_IABS"
+    ]
+   }
+  },
+  {
+   "id": 8,
+   "tier": "T2",
+   "title": "Financed but no Third Party Financing Addendum",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_TPF_ADDENDUM"
+    ]
+   }
+  },
+  {
+   "id": 9,
+   "tier": "T2",
+   "title": "HOA property, no HOA addendum",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_HOA_ADDENDUM"
+    ]
+   }
+  },
+  {
+   "id": 10,
+   "tier": "T2",
+   "title": "1972 home, no lead-based paint addendum",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_LBP_ADDENDUM"
+    ]
+   }
+  },
+  {
+   "id": 11,
+   "tier": "T2",
+   "title": "Individual seller, no Seller's Disclosure Notice",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_SELLER_DISCLOSURE"
+    ]
+   }
+  },
+  {
+   "id": 12,
+   "tier": "T2",
+   "title": "Terminated during option period, no release",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_EM_RELEASE"
+    ]
+   }
+  },
+  {
+   "id": 13,
+   "tier": "T2",
+   "title": "LLC seller, no proof of signing authority",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_ENTITY_AUTHORITY"
+    ]
+   }
+  },
+  {
+   "id": 14,
+   "tier": "T2",
+   "title": "Contract missing one buyer's signature",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "CONTRACT_NOT_EXECUTED"
+    ]
+   }
+  },
+  {
+   "id": 15,
+   "tier": "T3",
+   "title": "Estate sale with no Seller's Disclosure Notice (exempt)",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 16,
+   "tier": "T3",
+   "title": "Built in 1978 exactly, no lead-based paint addendum needed",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "clear",
+    "codes": []
+   }
+  },
+  {
+   "id": 17,
+   "tier": "T3",
+   "title": "Cover sheet says 1985, tax record says 1975, no lead paint addendum",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_LBP_ADDENDUM",
+     "YEAR_BUILT_MISMATCH"
+    ]
+   }
+  },
+  {
+   "id": 18,
+   "tier": "T3",
+   "title": "HOA addendum uploaded from another file (1108 vs 1180)",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_HOA_ADDENDUM",
+     "WRONG_TRANSACTION_DOC"
+    ]
+   }
+  },
+  {
+   "id": 19,
+   "tier": "T3",
+   "title": "VA loan and HOA, both addenda missing",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "MISSING_HOA_ADDENDUM",
+     "MISSING_TPF_ADDENDUM"
+    ]
+   }
+  },
+  {
+   "id": 20,
+   "tier": "T3",
+   "title": "Street number transposed on every document vs tax record",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "hold",
+    "codes": [
+     "PROPERTY_MISMATCH"
+    ]
+   }
+  },
+  {
+   "id": 21,
+   "tier": "T4",
+   "title": "Seller is not the owner of record",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "escalate",
+    "codes": [
+     "SELLER_NOT_OWNER"
+    ]
+   }
+  },
+  {
+   "id": 22,
+   "tier": "T4",
+   "title": "Closing statement price differs from cover sheet",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "escalate",
+    "codes": [
+     "CLOSING_PRICE_MISMATCH"
+    ]
+   }
+  },
+  {
+   "id": 23,
+   "tier": "T4",
+   "title": "Closing statement date differs from cover sheet",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "escalate",
+    "codes": [
+     "CLOSING_DATE_MISMATCH"
+    ]
+   }
+  },
+  {
+   "id": 24,
+   "tier": "T4",
+   "title": "Earnest money receipted 6 days after the Effective Date",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "escalate",
+    "codes": [
+     "EM_LATE"
+    ]
+   }
+  },
+  {
+   "id": 25,
+   "tier": "T4",
+   "title": "Lead-based paint addendum signed after the contract",
+   "pass": true,
+   "critical": false,
+   "errors": [],
+   "got": {
+    "decision": "escalate",
+    "codes": [
+     "LBP_AFTER_CONTRACT"
+    ]
+   }
+  }
+ ]
+}
