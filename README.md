@@ -1,6 +1,6 @@
 # Texas file pre-review, built in Sim
 
-A Sim workflow that pre-reviews a Texas resale file before a compliance reviewer opens it, plus a 25-case eval set and a harness that runs the deployed workflow through Sim's API and applies a go-live gate. It is the working piece behind the pilot plan `Side_Texas_PreReview_Pilot_Plan.pdf`.
+A Sim workflow that pre-reviews a Texas resale file before a compliance reviewer opens it, plus a 25-case eval set and a harness that runs the deployed workflow through Sim's API and applies a go-live gate. It is the working piece behind a pilot plan I wrote (a separate PDF, not in this repo).
 
 All files in `data/cases.json` are constructed. Names, addresses, prices and dates are invented. The rules come from public sources: Side's compliance review guide (support.side.com), TREC form 20-18 (paragraphs 5 and 22), Tex. Prop. Code 5.008 (seller's disclosure and its exemptions), and TREC's IABS rule. Nothing comes from Side's systems.
 
